@@ -1,0 +1,210 @@
+# SnowballGame Config
+####
+
+# true/false (If true, snowballs will cause knockback to players when they hits.)
+Knockback_For_Players: true
+Ball:
+    # true/false(If true, players can use custom snowball which behave like a ball for baseball.)
+    Enabled_Ball: true
+    # 'BallName' (Default name to display for the custom snowball)
+    Ball_Name: 'Ball'
+    # Natural number (Once you threw ball, you can't throw the next ball in this time.(Ticks))
+    Cool_Time: 30
+    Move:
+        # The type of moving balls.
+        Type:
+          - 'Fast'
+          - 'Slider'
+          - 'Curve'
+          - 'Folk'
+          - 'Sinker'
+          - 'Shuuto'
+          - 'Knuckle'
+        # The feature of each type of moving balls defined above lines.
+        # Velocity: positive number which will be multiplied by default ball's velocity(the default is about 108-110km/h.)
+        # Vertical: the vertical movement of the ball. a positive value makes the ball move up.
+        # Horizontal: the horizontal movement of the ball. a positive value means the direction of your main-hand side.
+        # Acceleration: the acceleration of the ball. If this value is positive, the ball will lose less speed than the ordinal snowball.
+        # Random: the movement with random direction.
+        Fast:
+            Velocity: 1.1
+            Vertical: 0.01
+            Horizontal: 0
+            Acceleration: 0.01
+        Slider:
+            Velocity: 1
+            Vertical: -0.005
+            Horizontal: -0.02
+            Acceleration: 0
+        Curve:
+            Velocity: 0.9
+            Vertical: -0.02
+            Horizontal: -0.02
+            Acceleration: -0.01
+        Folk:
+            Velocity: 1
+            Vertical: -0.02
+            Horizontal: 0
+            Acceleration: 0
+        Sinker:
+            Velocity: 0.9
+            Vertical: -0.02
+            Horizontal: 0.02
+            Acceleration: -0.01
+        Shuuto:
+            Velocity: 1
+            Vertical: -0.005
+            Horizontal: 0.02
+            Acceleration: 0
+        Knuckle:
+            Velocity: 0.9
+            Random: 0.02
+            Vertical: -0.02
+            Horizontal: 0
+            Acceleration: -0.02
+    # the names of the balls which have different repulsion with being hit.
+    Repulsion:
+        Highest: 'Ball'
+        Higher: 'Ball'
+        Lower: 'Ball'
+        Lowest: 'Ball'
+Bat:
+    # true/false (If true, players can use custom bow which behave like a bat for baseball.)
+    Enabled_Bat: true
+    # 'BatName' (Default name to display for the custom bow)
+    Bat_Name: 'Bat'
+    # You can change your swing by naming special name(set below) to your bat.
+    # Fly: (-1~1) Bigger value means you can hit high-fly easily, and smaller means batted-ball tends to be grounder. Default value is 0.
+    Swing:
+        Type:
+            - UPPER
+            - DOWN
+        UPPER:
+            Fly: 0.3
+        DOWN:
+            Fly: -0.3
+Glove:
+    # true/false (If true, players can use custom leather which behave like a bat for baseball.)
+    Enabled_Glove: true
+    # 'GloveName' (Default name to display for the custom leather)
+    Glove_Name: 'Glove'
+    Custom:
+        Type:
+            - SIDE
+            - SUBMARINE
+        # You can custom your release-point in pitching.A named glove make you other type of pitcher.
+        # Vertical: 0 means the height of your eye. positive value means above.
+        # Horizontal: 0 means the position of your eye. positive value means your main-hand side..
+        # Closeness: Increasing this value means you can pitch from closer to batter.
+        SIDE:
+            Vertical: -0.5
+            Horizontal: 0.3
+            Closeness: 0
+        SUBMARINE:
+            Vertical: -1.3
+            Horizontal: 0
+            Closeness: 0
+Umpire:
+    # true/false (If true, players can summon custom Armor_Stand which call "Strike" when the ball through Strike-zone.)
+    Enabled_Umpire: true
+    # 'UmpireName' (Default name to display for the custom Armor_Stand)
+    Umpire_Name: 'Umpire'
+    # the height(from the ground) of the top of the strike-zone.
+    Top: 1.7
+    # the height(from the ground) of the bottom of the strike-zone.
+    Bottom: 0.5
+Base:
+    # true/false (If true, players can place a base which is useful for jugding safe or out.)
+    Enabled_Base: true
+    # 'UmpireName' (Default name to display for the custom Armor_Stand)
+    Base_Name: 'Base'
+Coach: 
+    # true/false (If true, players can summon custom Armor_Stand which hit the ball when you practice fielding.)
+    Enabled_Coach: true
+    # 'CoachName' (Default name to display for the custom Armor_Stand)
+    Coach_Name: 'Coach'
+    # The limit of "/sbg please" command
+    Coach_Range: 120
+Broadcast:
+   # About the message of swinging a bat.
+   Swing:
+       Enabled: true
+       Range: 50
+       Message: '[[YELLOW]][[BOLD]]*** [[PLAYER]] SWINGS ***'
+   # About the message of trying to bunt(swing gently)
+   Bunt:
+       Enabled: true
+       Range: 50
+       Message: '[[GREEN]][[BOLD]]*** [[PLAYER]] TRIES TO BUNT ***'
+   # About the message of hitting a ball with a bat.
+   Hit:
+       Enabled: true
+       Range: 100
+       Message: '[[DARK_RED]][[BOLD]]*** [[PLAYER]] HITS THE BALL ***'
+   # About the message of tagging a runner (hit a runner with a ball in main-hand)
+   Tag:
+       Enabled: true
+       Range: 50
+       Message: '[[BLUE]][[BOLD]]*** [[PLAYER]] TAGS [[RUNNER]] ***'
+   # About the message of catching a batted-ball in flight.
+   Catch:
+       Enabled: true
+       Range: 100
+       Message: '[[LIGHT_PURPLE]][[BOLD]]*** [[PLAYER]] CATCHES THE BALL ***'
+   # About the message of "Strike" call.
+   Strike:
+       Range: 100
+       Message: '[[YELLOW]][[BOLD]]*** STRIKE [[SPEED]] [[TYPE]]  PITCHED BY [[PLAYER]]***'
+   # About the message of runner reaching the base.
+   Reach_Base:
+       Enabled: true
+       Range: 50
+       Message: '[[RED]][[BOLD]]*** [[PLAYER]] REACHES THE [[BASE]] ***'
+   # About the message of fielder touching the base with holding a ball.
+   Touch_Base:
+       Enabled: true
+       Range: 50
+       Message: '[[DARK_PURPLE]][[BOLD]]*** [[PLAYER]] TOUCHES THE [[BASE]] ***'
+   # About the message of fielder is standing on the base.
+   Standing_Base:
+       Enabled: true
+       Range: 120
+       Message: '[[GOLD]][[BOLD]]*** [[PLAYER]] IS STANDING ON THE [[BASE]] ***'
+       
+#If you want to know about the format of "Particle" section, you should see https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+Particle:
+    # When a player catch the ball with his glove.
+    Catch_Ball:
+        Enabled: false
+        Particle: CRIT_MAGIC
+    Throw_Ball:
+        Enabled: false
+        Particle: SNOWBALL
+    # When a ball hit to a player.
+    Hit_to_Players:
+        Enabled: false
+        Particle: CRIT
+    # When a player swings his bat.
+    Swing_Bat:
+        Enabled: true
+        Particle: SWEEP_ATTACK
+    # If true, the particle will track your swing(But it's just a guide.)
+    Swing_Bat_Sequent:
+        Enabled: false
+        Particle: VILLAGER_HAPPY
+    # When a player slugs a ball with his bat.
+    Hit_by_Bat:
+        Enabled: false
+        Particle: EXPLOSION_LARGE
+    # During a batted-ball is going in flight.
+    BattedBall_InFlight:
+        Enabled: false
+        Particle: FIREWORKS_SPARK
+    # When a batted-Ball ground on something at the first time."Time" value means how long the particle will being shown.
+    BattedBall_Ground:
+        Enabled: true
+        Particle: SNOW_SHOVEL
+        Time: 200
+    # When a player pitch a specific moving-ball.You can set the type of particles in each ball's section.
+    MovingBall:
+        Enabled: true

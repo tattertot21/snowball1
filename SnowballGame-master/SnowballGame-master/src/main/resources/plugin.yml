@@ -1,0 +1,27 @@
+name: SnowballGame
+main: com.github.kanesada2.SnowballGame.SnowballGame
+version: 1.1.9
+commands:
+    SnowballGame:
+      description: get SnowballGame's items.
+      aliases: sbg
+permissions:
+    SnowballGame.*:
+      description: Gives access to all SnowballGame commands
+      default: op
+      children:
+        Snowballgame.config: true
+        Snowballgame.get: true
+        Snowballgame.please: true
+    Snowballgame.config:
+      description: Allows you to reload SnowballGame's config
+      default: op
+    Snowballgame.get:
+      description: Allows you to get SnowballGame's items
+      default: op
+    Snowballgame.please:
+      description: Allows you to get SnowballGame's items
+      default: true
+    Snowballgame.sweep:
+      description: Allows you to clean up floating balls arround you
+      default: true
